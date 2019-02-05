@@ -10,4 +10,6 @@ For frontend
 - npm install
 - npm start
 
+# Pending
+Do not refresh the page, as storing token details in cookies is pending. After login you can move to any page, just do not refresh the page. If you refresh, login again and continue.
 
