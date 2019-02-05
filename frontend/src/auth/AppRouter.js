@@ -5,6 +5,7 @@ import ProjectList from "../projects/components/ProjectList";
 import ProjectDetails from "../projects/components/ProjectDetails";
 import TodosPage from "../todos/components/TodosPage";
 import ViewDashboard from '../dashboard/components/ViewDashboard';
+import SignUp from '../users/components/SignUp';
 // import PrivateRoute from "./PrivateRoute";
 
 const AppRouter = () => (
@@ -15,17 +16,21 @@ const AppRouter = () => (
           <span>
             <Link to="/login">Login</Link>
           </span>
-          {' '}
+          {' || '}
           <span>
             <Link to="/projects">Projects</Link>
           </span>
-          {' '}
+          {' || '}
           <span>
             <Link to="/todos">Todos</Link>
           </span>
-          {' '}
+          {' || '}
           <span>
             <Link to="/dashboard">Dashboard</Link>
+          </span>
+          {' || '}
+          <span>
+            <Link to="/users">Manage Users</Link>
           </span>
           </div>
       </nav>
@@ -34,6 +39,7 @@ const AppRouter = () => (
       <Route path="/todos" component={TodosPage} exact />
       <Route path="/projects/:id" component={ProjectDetails} exact />
       <Route path="/dashboard" component={ViewDashboard} exact />
+      <Route path="/users" component={SignUp} exact />
     </div>
   </Router>
 );

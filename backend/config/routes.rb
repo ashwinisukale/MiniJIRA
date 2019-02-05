@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :users, only: [:index]
+  resources :users, only: [:index, :destroy]
   get 'admin/data', to: 'dashboard#data'
   get 'data', to: 'dashboard#user_data'
   resources :todos do

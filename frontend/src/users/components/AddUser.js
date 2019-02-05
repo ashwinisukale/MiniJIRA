@@ -28,9 +28,9 @@ class AddUser extends React.Component {
       <div>
         <h2>Add User</h2>
         <div>
-        <label>name</label>
+        <label>Email</label>
         <select onChange={(e) => this.onChange(e.target.value, 'selectedUserId')} value={selectedUserId} >
-          {users.map(user => <option key={user.id} value={user.id}>{user.name}</option>)}
+          {users.map(user => <option key={user.id} value={user.id}>{user.email}</option>)}
         </select>
         </div>
         <button onClick={this.addUser} > Add User</button>

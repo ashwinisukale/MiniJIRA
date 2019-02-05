@@ -6,7 +6,7 @@ class DashboardController < ApplicationController
   	array = []
   	if project_params[:by_user]
 	  	User.where(admin: false).left_joins(:todos).includes(:todos).distinct.each do |user|
-	  		array << { "name" => user.name, "todos" => user.todos.group_by(&:status) }
+	  		array << { "name" => user.email, "todos" => user.todos.group_by(&:status) }
 	  	end
   	else
       condition = project_params[:project_id].present? ? Project.where(id: project_params[:project_id
@@ -21,7 +21,7 @@ class DashboardController < ApplicationController
   def user_data
   	array = []
   	User.where(admin: false, id: current_user.id).left_joins(:todos).includes(:todos).distinct.each do |user|
-  		array << { "name" => user.name, "todos" => user.todos.group_by(&:status) }
+  		array << { "email" => user.email, "todos" => user.todos.group_by(&:status) }
   	end
   	render json: array
   end

@@ -21,12 +21,12 @@ class UserList extends React.Component {
     const {project_id} = this.props;
     return (
       <div>
-        <h2>Users</h2>
+        <h2>Project Users</h2>
         <AddUser onAdd={this.updateUserList} project_id={project_id}/>
         <ul>
         {
           users.map(user => <li key={user.id}>
-          <User user={user} onRemove={this.updateUserList} />
+          <User user={user} project_id={project_id} onRemove={this.updateUserList} />
             </li>)
         }
         </ul>
