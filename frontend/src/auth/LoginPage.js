@@ -35,11 +35,17 @@ class LoginPage extends React.Component {
     return (
       <div>
         <h1>Login Page</h1>
+        <span>
         <label>email</label>
         <input onChange={(e) => this.onChange(e.target.value, 'email')} value={email} />
-        <label>pwd</label>
+        </span>
+        <br />
+        <span>
+        <label>Password</label>
         <input type="password" onChange={(e) => this.onChange(e.target.value, 'password')} value={password} />
-        <button onClick={this.onSubmit} >Login</button>
+        </span>
+        <br />
+        <span> <button onClick={this.onSubmit} >Login</button> </span>
     </div>
     )
   }
